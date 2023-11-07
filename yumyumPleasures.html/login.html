@@ -1,0 +1,194 @@
+<!--DOCTYPE html>
+<html>
+<head>
+    <title>Login and User Profile</title>
+    <style>
+        .login-box {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .profile-box {
+            display: none;
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username"><br><br>
+        <input type="password" id="password" placeholder="Password"><br><br>
+        <p class="error-message" id="error-message"></p>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div class="profile-box" id="profile-box">
+        <h2>User Profile</h2>
+        <p><strong>Username:</strong> <span id="profile-username"></span></p>
+        <p><strong>Email:</strong> <span id="profile-email"></span></p>
+        <p><strong>Address:</strong> <span id="profile-address"></span></p>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorElement = document.getElementById("error-message");
+
+            // Check if the username and password are correct (you can add your own validation logic here)
+            if (username === "your_username" && password === "your_password") {
+                // Hide the login box and show the user profile box
+                document.querySelector('.login-box').style.display = 'none';
+                document.querySelector('.profile-box').style.display = 'block';
+
+                // Set user information in the profile box
+                document.getElementById("profile-username").textContent = username;
+                document.getElementById("profile-email").textContent = "user@example.com"; // Replace with the user's email
+                document.getElementById("profile-address").textContent = "123 Main St, City, Country"; // Replace with the user's address
+
+                // Clear any previous error messages
+                errorElement.textContent = "";
+            } else {
+                // Display an error message
+                errorElement.textContent = "Invalid password. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html-->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration and Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .profile-box {
+            display: none;
+        }
+        .error-message {
+            color: red;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="registration-container">
+        <h2>Registration</h2>
+        <input type="text" id="reg-username" placeholder="Username"><br><br>
+        <input type="email" id="reg-email" placeholder="Email"><br><br>
+        <input type="text" id="reg-address" placeholder="Address"><br><br>
+        <input type="password" id="reg-password" placeholder="Password"><br><br>
+        <button onclick="register()">Submit</button>
+    </div>
+
+    <div class="container" id="login-container">
+        <h2>Login</h2>
+        <input type="text" id="login-username" placeholder="Username"><br><br>
+        <input type="password" id="login-password" placeholder="Password"><br><br>
+        <p class="error-message" id="login-error-message"></p>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div class="container profile-box" id="profile-container">
+        <h2>User Profile</h2>
+        <p><strong>Username:</strong> <span id="profile-username"></span></p>
+        <p><strong>Email:</strong> <span id="profile-email"></span></p>
+        <p><strong>Address:</strong> <span id="profile-address"></span></p>
+    </div>
+
+    <script>
+        var regUsername, regEmail, regAddress, regPassword;
+
+        function register() {
+            regUsername = document.getElementById("reg-username").value;
+            regEmail = document.getElementById("reg-email").value;
+            regAddress = document.getElementById("reg-address").value;
+            regPassword = document.getElementById("reg-password").value;
+            
+            // Check if all registration fields are filled
+            if (regUsername && regEmail && regAddress && regPassword) {
+                // Hide registration container
+                document.getElementById("registration-container").style.display = "none";
+                
+                // Show login container
+                document.getElementById("login-container").style.display = "block";
+            }
+            else{
+                alert("fill all")
+            }
+        }
+
+        function login() {
+            var loginUsername = document.getElementById("login-username").value;
+            var loginPassword = document.getElementById("login-password").value;
+            var loginErrorMessage = document.getElementById("login-error-message");
+
+            // Check if login details match registration details
+            if (loginUsername === regUsername && loginPassword === regPassword) {
+                // Hide login container
+                document.getElementById("login-container").style.display = "none";
+
+                // Show user profile container
+                document.getElementById("profile-container").style.display = "block";
+
+                // Populate user profile
+                document.getElementById("profile-username").textContent = regUsername;
+                document.getElementById("profile-email").textContent = regEmail;
+                document.getElementById("profile-address").textContent = regAddress;
+            } else {
+                // Display an error message
+                loginErrorMessage.textContent = "Login details do not match. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>
+

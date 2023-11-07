@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy Registration</title>
+
+
+    <!-- sweet alert library -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+    <link rel="icon" href="images/myfavicon-2.png" type="image/icon">
+
+     <!-- code for font awsome 4 -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="style_validate.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-
+        BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+</head>
+<body>
+    
+    <!-- header section-->
+    <header class="header">
+        <a href="#" class="logo"><i class="fa fa-cutlery"></i><h4>YumYumPleasures</h4></a>
+
+
+        <nav class="navbar">
+             <a href="#home">home</a>
+             <a href="#features">features</a>
+             <a href="#products">products</a>
+             <a href="#categories">categories</a>
+             <a href="#review">review</a>
+             <a href="#blogs">blogs</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fa fa-bars" id="menu-btn"></div>
+            <div class="fa fa-search" id="search-btn"></div>
+            <div class="fa fa-shopping-cart" id="shopping-btn"></div>
+            <div class="fa fa-user" id="login-btn"></div>
+        </div>
+
+
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="Search Here">
+            <label for="search-box" class="fa fa-search"></label>
+        </form>
+
+        <div class="shopping-cart">
+            <div class="box">
+                <i class="fa fa-trash"></i>
+                <img src="images/f6.png" alt="">
+                <div class="content">
+                    <h3>pizza</h3>
+                    <span class="price">$2.99/-</span>
+                    <span class="quantity">Qty : 1</span>
+                </div>
+
+            </div>
+
+            <div class="box">
+                <i class="fa fa-trash"></i>
+                <img src="images/f7.png" alt="">
+                <div class="content">
+                    <h3>burgar</h3>
+                    <span class="price">$1.99/-</span>
+                    <span class="quantity">Qty : 1</span>
+                </div>
+
+            </div>
+
+            <div class="box">
+                <i class="fa fa-trash"></i>
+                <img src="images/f9.png" alt="">
+                <div class="content">
+                    <h3>chicken frie</h3>
+                    <span class="price">$2.59/-</span>
+                    <span class="quantity">Qty : 1</span>
+                </div>
+
+            </div>
+
+            <div class="total"> total : $7.57/- </div>
+            <a href="#" class="btn">Checkout</a>
+
+        </div>
+
+
+
+
+        <form action="" class="login-form">
+            <h3>login now</h3>
+            <input type="email" placeholder="Enter Email" class="box" required name="email">
+            <input type="password" placeholder="Enter password" class="box" required name="password">
+
+            <p>Forgot your password <a href="#">click here</a></p>
+            <p>Don't have an account <a href="index_validate.html" target="_blank">create now</a></p>
+
+
+            <input type="submit" value="Login now" class="btn">
+
+            
+
+        </form>
+    </header>
+<!--header section -->
+
+
+
+
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary">
+                    <h2>Registration</h2>
+                </div>
+                <div class="card-body">
+                    <form id="registration-form">
+                        <div class="form-group">
+                            <label for="reg-username">Username:</label>
+                            <input type="text" class="form-control" id="reg-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-email">Email:</label>
+                            <input type="email" class="form-control" id="reg-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-address">Address:</label>
+                            <input type="text" class="form-control" id="reg-address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password">Password:</label>
+                            <input type="password" class="form-control" id="reg-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password:</label>
+                            <input type="password" class="form-control" id="confirm-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    document.getElementById("registration-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var regUsername = document.getElementById("reg-username").value;
+        var regEmail = document.getElementById("reg-email").value;
+        var regAddress = document.getElementById("reg-address").value;
+        var regPassword = document.getElementById("reg-password").value;
+        var confirmPassword = document.getElementById("confirm-password").value;
+
+        if (regPassword === confirmPassword) {
+            // Store registration data in local storage
+            localStorage.setItem("regUsername", regUsername);
+            localStorage.setItem("regEmail", regEmail);
+            localStorage.setItem("regAddress", regAddress);
+            localStorage.setItem("regPassword", regPassword);
+
+            swal("Success!", "Your data have been saved. Thank you!", "success");
+            window.location.href = "index1.html";
+        } else {
+            swal("Failed!", "Your password doesn't match. Thank you!", "error");
+        }
+    });
+</script>
+
+
+
+
+<!--footer section -->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Yummy <i class="fa fa-cutlery"></i></h3>
+            <p>Feel Free To Follow Us On Our Social Media Handlers All The Links Are Given Below.</p>
+
+            <div class="share">
+                <a href="https://www.facebook.com/sudhakar.siriberi.9?mibextid=ZbWKwL" target="_blank" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/s_siriberi?t=sLACD3pGO6XdH-Ah9OHKyw&s=09" target="_blank" class="fa fa-twitter"></a>
+                <a href="https://instagram.com/_sudhakar_siriberi?igshid=ZDdkNTZiNTM=" target="_blank" class="fa fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/sudhakar-siriberi-aa4b53251/" target="_blank" class="fa fa-linkedin"></a>
+            </div>
+        </div>
+
+
+        
+        
+        <div class="box">
+            <h3>Contact Info </i></h3>
+            <a href="#" class="links"> <i class="fa fa-phone"></i> +9195054641252</a>
+
+            <a href="#" class="links"> <i class="fa fa-phone"></i> +917095849402</a>
+
+            <a href="#" class="links"> <i class="fa fa-envelope"></i> siriberisudhakar@gmail.com</a>
+
+            <a href="#" class="links"> <i class="fa fa-map-marker"></i> @tyajampudi Andhra</a>
+        </div>
+        
+
+        <div class="box">
+            <h3>Quick Links </i></h3>
+            <a href="#" class="links"> <i class="fa fa-arrow-right"></i> Home</a>
+
+            <a href="#" class="links"> <i class="fa fa-arrow-right"></i> Features</a>
+
+            <a href="#" class="links"> <i class="fa fa-arrow-right"></i> Products</a>
+
+            <a href="#" class="links"> <i class="fa fa-arrow-right"></i> Categories</a>
+
+            <a href="#" class="links"> <i class="fa fa-arrow-right"></i> Review</a>
+
+            <a href="#" class="links"> <i class="fa fa-arrow-right"></i> Blogs</a>
+        </div>
+
+        <div class="box">
+            <h3> Newsletter </i></h3>
+            <p>Subscribe For latest Updates</p>
+            <input type="email" name="" class="email" placeholder="Your Email">
+
+            <input type="submit" value="Subscribe" class="btn">
+
+        </div>
+    </div>
+
+    <div class="credit">
+        Created By <span>Sudhakar Siriberi</span> | All Rights Reserved
+    </div>
+    
+</section>
+
+
+<!--footer section -->
+
+
+
+
+
+    <script src="index_validate.js"></script>
+</body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YumYumPleasures</title>
+    <link rel="icon" href="images/myfavicon-2.png" type="image/icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+     <!-- code for font awsome 4 -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+<body>
+    
+    <!-- header section-->
+    <header class="header">
+        <a href="#" class="logo"><i class="fa fa-cutlery"></i><h4>YumYumPleasures</h4></a>
+
+
+        <nav class="navbar">
+             <a href="#home">home</a>
+             <a href="#features">features</a>
+             <a href="#products">products</a>
+             <a href="#categories">categories</a>
+             <a href="#review">review</a>
+             <a href="#blogs">blogs</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fa fa-bars" id="menu-btn"></div>
+            <div class="fa fa-search" id="search-btn"></div>
+            <div class="fa fa-shopping-cart" id="shopping-btn"></div>
+            <div class="fa fa-user" id="login-btn"></div>
+        </div>
+
+
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="Search Here">
+            <label for="search-box" class="fa fa-search"></label>
+        </form>
+
+
+
+
+        <div class="shopping-cart">
+            <h3 style="text-align: center;">Showping Cart</h3>
+            <div class="box">
+
+                    <ul id="cart-items">
+                      <!-- Cart items will be displayed here -->
+                    </ul>
+                    
+              
+            </div>
+                
+            
+            
+        
+                
+            <div class="box">
+                <ul id="cart-items">
+                    
+                </ul>
+            </div>
+
+            <div class="box">
+                <ul id="cart-items">
+                    
+                </ul>
+            </div>
+
+            <div class="total"> total :<span id="cart-total">$0</span></div>
+            <button class="btn btn-success btn" id="checkout-btn"><a href="#">Checkout</a></button>
+
+        </div>
+
+
+
+
+        <form action="index1.html" class="login-form" id="login-form">
+            <div class="card">
+                <div class="card-header">
+                    <h3>User Profile</h3>
+                </div>
+                <div class="card-body">
+                    <p><strong>Username: </strong> <span id="profile-username"></span></p>
+                    <p><strong>Email: </strong> <span id="profile-email"></span></p>
+                    <p><strong>Address: </strong> <span id="profile-address"></span></p>
+                    
+                </div>
+                
+            </div>
+            <button type="submit" class="btn btn-danger bg-danger" ><a href="index1.html">LogOut</a></button>
+        </form>
+    </header>
+<!--header section -->
+
+
+
+<!--banner section -->
+
+<section class="home" id="home">
+    <div class="content">
+        <h3>Where every bite is a delig<span>ht and every meal is a memory</span></h3>
+        <p>Yum Yum Pleasures Your Gateway to Culinary Bliss. Discover exquisite flavors, indulge in tantalizing dishes, and elevate your dining experience with us. Join our food adventure today!</p>
+
+        <a href="#" class="btn">Shop now</a>
+    </div>
+
+
+</section>
+
+<!--banner section -->
+
+
+<!--our features section -->
+
+<section class="features" id="features">
+
+    <h1 class="heading"> our <span>features</span> </h1>
+
+
+    <div class="box-container">
+        <div class="box">
+            <img src="images/cta-banner.png" alt="">
+            <h3>Chicken Burger</h3>
+
+            <p>Savor our Chicken Burger – a delicious blend of seasoned chicken, fresh toppings, and a toasted bun, crafted to perfection.</p>
+
+            <a href="#" class="btn">Read More</a>
+        </div>
+
+        <div class="box">
+            <img src="images/delivery-boy.svg" alt="">
+            <h3>home delivery</h3>
+
+            <p>Enjoy our culinary creations at your doorstep with our hassle-free home delivery service. Delight in the flavors of our restaurant from the comfort of your own home. Order now for a convenient and delicious dining experience.</p>
+
+            <a href="#" class="btn">Read More</a>
+        </div>
+
+        <div class="box">
+            <img src="images/about-banner.png" alt="">
+            <h3>burger with coke</h3>
+
+            <p>Satisfy your cravings with our delectable burgers, perfectly complemented by a chilled, classic Coke. The perfect duo for a delightful meal.</p>
+
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </div>
+
+</section>
+<!--our features section -->
+
+
+<!--our products section -->
+
+<section class="products" id="products">
+    <h1 class="heading"> our <span>products</span> </h1>
+
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+                <img src="images/food-menu-4.png" alt="">
+                <h1>Mac and Cheese</h1>
+                <div class="price"> ₹200 -  ₹400</div>
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+
+                </div>
+
+                <a class="add-to-cart btn" data-name="Mac and Cheese" data-price="300" data-img="images/food-menu-4.png" onclick="function3()">Add to Cart</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/promo-2.png" alt="">
+                <h1>Sushi Burrito</h1>
+                <div class="price">₹250 - ₹500</div>
+
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+
+                </div>
+
+                <a class="add-to-cart btn" data-name="Sushi Burrito" data-price="300" data-img="images/promo-2.png">Add To Cart</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/promo-4.png" alt="">
+                <h1>Acai Bowl Bliss</h1>
+                <div class="price">₹300 - ₹600</div>
+
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+
+                </div>
+
+                <a class="add-to-cart btn" data-name="Acai Bowl Bliss" data-price="400" data-img="images/promo-4.png">Add To Cart</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/promo-3.png" alt="">
+                <h1>Kimchi Slaw</h1>
+                <div class="price">₹400 - ₹700</div>
+
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+
+                </div>
+
+                <a class="add-to-cart btn" data-name="Kimchi Slaw" data-price="400" data-img="images/promo-3.png">Add To Cart</a>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide box">
+                <img src="images/food-menu-1.png" alt="">
+                <h1>Kimchi Tofu Tacos</h1>
+                <div class="price">₹450 - ₹750</div>
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+
+                </div>
+
+                <a class="add-to-cart btn" data-name="Kimchi Tofu Tacos" data-price="750" data-img="images/food-menu-1.png">Add To Cart</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/food-menu-2.png" alt="">
+                <h1>Tandoori Quinoa Tikka</h1>
+                <div class="price">₹800 - ₹900</div>
+
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+
+                </div>
+
+                <a class="add-to-cart btn" data-name="Tandoori Quinoa Tikka" data-price="800" data-img="images/food-menu-2.png">Add To Cart</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/promo-1.png" alt="">
+                <h1>Masala Avocado Toast</h1>
+                <div class="price">₹900 - ₹1000</div>
+
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+
+                </div>
+
+                <a class="add-to-cart btn" data-name="Masala Avocado Toast" data-price="900" data-img="images/promo-1.png">Add To Cart</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="images/f3.png" alt="">
+                <h1>Curry Naan Pizza</h1>
+                <div class="price">₹900 - ₹1000</div>
+
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+
+                </div>
+
+                <a class="add-to-cart btn" data-name="Curry Naan Pizza" data-price="950" data-img="images/f3.png">Add To Cart</a>
+            </div>
+
+
+        </div>
+    </div>
+
+</section>
+<!--our products section -->
+
+
+<!--our categories section -->
+<section class="categories" id="categories">
+    <h1 class="heading"> our <span>categories</span> </h1>
+
+    <div class="box-container">
+        <div class="box">
+            <img src="images/f5.png" alt="">
+            <h3> Cheese</h3>
+            <div class="price">₹1000 - ₹1500</div>
+            <a class="add-to-cart btn" data-name="Cheese" data-price="1050" data-img="images/f5.png">Shop Now</a>
+        </div>
+
+
+        <div class="box">
+            <img src="images/f4.png" alt="">
+            <h3>Kofta Sliders</h3>
+            <div class="price">₹1000 - ₹1500</div>
+            <a class="add-to-cart btn" data-name="Kofta Sliders" data-price="1110" data-img="images/f4.png">Shop Now</a>
+        </div>
+
+
+        <div class="box">
+            <img src="images/blog-2.jpg" alt="">
+            <h3>Masala Popcorn</h3>
+            <div class="price">₹1000 - ₹1500</div>
+            <a class="add-to-cart btn" data-name="Masala Popcorn" data-price="1200" data-img="images/blog-2.jpg">Shop Now</a>
+        </div>
+
+
+        <div class="box">
+            <img src="images/blog-1.jpg" alt="">
+            <h3>Chaat Waffle Fries</h3>
+            <div class="price">₹1000 - ₹1500</div>
+            <a class="add-to-cart btn" data-name="Chaat Waffle Fries" data-price="1300" data-img="images/blog-1.jpg">Shop Now</a>
+        </div>
+    </div>
+</section>
+
+<!--our categories section-->
+
+
+<!--review section-->
+<section class="review" id="review">
+    <h1 class="heading"> customer's <span>review</span> </h1>
+
+    <div class="swiper review-slider">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="images/client1.jpg" alt="">
+                <p>Yum Yum Pleasures exceeded my expectations! The Chicken Burger was incredibly flavorful, and the home delivery service was swift and convenient. I'll definitely be ordering from here again.</p>
+                <h3>john deo</h3>
+
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+
+                </div>
+            </div>
+
+
+            <div class="swiper-slide box">
+                <img src="images/client2.jpg" alt="">
+                <p>I had a fantastic dining experience at Yum Yum Pleasures. The flavors of the Chicken Burger were exceptional, and the combination with a refreshing Coke made it a perfect meal. I can't wait to try more from their menu.</p>
+                <h3>john deo</h3>
+                
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+
+                </div>
+            </div>
+
+
+            <div class="swiper-slide box">
+                <img src="images/review1.avif" alt="">
+                <p>Yum Yum Pleasures is my new go-to for delicious food. The Chicken Burger is a must-try – it's juicy and packed with flavor. Their home delivery service is a bonus; it makes enjoying their food even more convenient. I highly recommend it.</p>
+                <h3>john deo</h3>
+                
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+
+                </div>
+            </div>
+
+
+            <div class="swiper-slide box">
+                <img src="images/review2.avif" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi quae impedit assumenda aliquid nulla qui, eum veniam quos nemo, magnam numquam repudiandae accusamus corporis ullam consectetur fugiat sequi nostrum unde.</p>
+                <h3>john deo</h3>
+                
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!--review section -->
+
+
+
+<!--Blog section -->
+
+<section class="blogs" id="blogs">
+    <h1 class="heading"> Our <span>Blogs</span> </h1>
+
+    <div class="box-container">
+        <div class="box">
+            <img src="images/cbiryani.avif" alt="">
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fa fa-user"></i> By User</a>
+                    <a href="#"> <i class="fa fa-calendar"></i> 26th oct, 2023</a>
+                </div>
+                <h3>Chicken Biryani</h3>
+                    <p>Indulge in the aromatic symphony of spices and tender chicken with our mouthwatering Chicken Biryani. Each bite is a journey to flavor paradise that you won't want to miss.</p>
+                    <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <img src="images/cburgar.avif" alt="">
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fa fa-user"></i> By User</a>
+                    <a href="#"> <i class="fa fa-calendar"></i> 26th oct, 2023</a>
+                </div>
+                <h3>Chicken Burger</h3>
+                    <p>Our Chicken Burger is the ultimate satisfaction for burger lovers. Juicy chicken patty, fresh toppings, and the perfect bun come together to create a burger experience that's simply irresistible.</p>
+                    <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <img src="images/cpizza.avif" alt="">
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fa fa-user"></i> By User</a>
+                    <a href="#"> <i class="fa fa-calendar"></i> 26th oct, 2023</a>
+                </div>
+                <h3>Chicken Pizza</h3>
+                    <p>Elevate your pizza game with our delectable Chicken Pizza. Packed with savory chicken, flavorful sauces, and a medley of toppings, it's a slice of heaven for every pizza enthusiast.</p>
+                    <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Blog section -->
+
+
+<!--footer section -->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>Yummy <i class="fa fa-cutlery"></i></h3>
+            <p>Feel Free To Follow Us On Our Social Media Handlers All The Links Are Given Below.</p>
+
+            <div class="share">
+                <a href="https://www.facebook.com/sudhakar.siriberi.9?mibextid=ZbWKwL" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/s_siriberi?t=sLACD3pGO6XdH-Ah9OHKyw&s=09" class="fa fa-twitter"></a>
+                <a href="https://instagram.com/_sudhakar_siriberi?igshid=ZDdkNTZiNTM=" class="fa fa-instagram"></a>
+                <a href="https://www.linkedin.com/in/sudhakar-siriberi-aa4b53251/" class="fa fa-linkedin"></a>
+            </div>
+        </div>
+
+
+        
+        
+        <div class="box">
+            <h3>Contact Info </i></h3>
+            <a href="#" class="links"> <i class="fa fa-phone"></i> +9195054641252</a>
+
+            <a href="#" class="links"> <i class="fa fa-phone"></i> +917095849402</a>
+
+            <a href="#" class="links"> <i class="fa fa-envelope"></i> siriberisudhakar@gmail.com</a>
+
+            <a href="#" class="links"> <i class="fa fa-map-marker"></i> @tyajampudi Andhra</a>
+        </div>
+        
+
+        <div class="box">
+            <h3>Quick Links </i></h3>
+            <a href="#" class="links"> <i class="fa fa-arrow-right"></i> Home</a>
+
+            <a href="#" class="links"> <i class="fa fa-arrow-right"></i> Features</a>
+
+            <a href="#" class="links"> <i class="fa fa-arrow-right"></i> Products</a>
+
+            <a href="#" class="links"> <i class="fa fa-arrow-right"></i> Categories</a>
+
+            <a href="#" class="links"> <i class="fa fa-arrow-right"></i> Review</a>
+
+            <a href="#" class="links"> <i class="fa fa-arrow-right"></i> Blogs</a>
+        </div>
+
+        <div class="box">
+            <h3> Newsletter </i></h3>
+            <p>Subscribe For latest Updates</p>
+            <input type="email" name="" class="email" placeholder="Your Email">
+
+            <input type="submit" value="Subscribe" class="btn">
+
+        </div>
+    </div>
+
+    <div class="credit">
+        Created By <span>Sudhakar Siriberi</span> | All Rights Reserved
+    </div>
+    
+</section>
+
+
+
+
+
+
+
+
+<!--footer section -->
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>

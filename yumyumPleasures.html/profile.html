@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>User Profile</h2>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Username:</strong> <span id="profile-username"></span></p>
+                        <p><strong>Email:</strong> <span id="profile-email"></span></p>
+                        <p><strong>Address:</strong> <span id="profile-address"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var regUsername = localStorage.getItem("regUsername");
+        var regEmail = localStorage.getItem("regEmail");
+        var regAddress = localStorage.getItem("regAddress");
+
+        if (regUsername) {
+            document.getElementById("profile-username").textContent = regUsername;
+            document.getElementById("profile-email").textContent = regEmail;
+            document.getElementById("profile-address").textContent = regAddress;
+        } else {
+            alert("User data not found. Please register and log in.");
+            window.location.href = "registration.html";
+        }
+    </script>
+</body>
+</html>
