@@ -5,67 +5,155 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- sweet alert library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-
-  <title>Payment Page</title>
+  <title>Checkout Page</title>
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="icon" href="images/myfavicon-2.png" type="image/icon">
 
 </head>
 <body>
-  <div class="container mt-5">
-    
-    
-    <!-- Payment mode selection -->
 
-    <div class="container mt-1 mb-3">
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header bg-primary">
-                <h2>Make Payment</h2>
-              </div>
-              <div class="card-body">
-                <form id="payment-form">
-                  <div class="form-group">
-                    <label for="payment-mode">Select Payment Mode:</label>
-                    <select class="form-control" id="payment-mode" required>
-                      <option value="online">Online Payment</option>
-                      <!-- Add more payment options if needed -->
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="user-name">User Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="card-holder-name">Card Holder Name</label>
-                    <input type="text" class="form-control" id="card-holder-name" name="card-holder-name" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="card-number">Card Number</label>
-                    <input type="text" class="form-control" id="card-number" name="card-number" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" required>
-                  </div>
-                  <div class="form-group">
-                    <h3>The Items You Will Buy:</h3>
-                    <ul id="cart-items">
-                      <!-- Cart items will be displayed here -->
-                    </ul>
-                    <h3>Total Price: <span id="total-price">$0</span></h3>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Place Order</button>
-                </form>
-              </div>
-            </div>
+  
+  <div class="container mt-1 mb-3">
+    <!-- Your checkout page content -->
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-primary">
+            <h2>Let us know your order</h2>
+            <h5>We will contact you.</h5>
           </div>
-        </div>
+          <div class="card-body">
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+              <input type="hidden" name="access_key" value="29580fc5-21fb-416e-a17d-1714cf6fdc14">
+
+              <div class="form-group">
+                <label for="payment-mode">Select Payment Mode:</label>
+                <select class="form-control" id="payment-mode" required>
+                  <option value="online" name="pay mode">Offline Payment</option>
+                  <!-- Add more payment options if needed -->
+                </select>
+              </div>
+
+
+              <div class="form-group">
+                <label for="user-name">User Name</label>
+                <input type="text" class="form-control" id="name" name="Customer-Name" required>
+              </div>
+              <div class="form-group">
+                <label for="card-holder-name">Email Id</label>
+                <input type="email" class="form-control" id="card-holder-name" name="Customer-Email ID" required>
+              </div>
+              <div class="form-group">
+                <label for="card-number">Contect Number</label>
+                <input type="tel" class="form-control" id="card-number" name="Phno number" placeholder="Enter working phno no..." required>
+              </div>
+              <div class="form-group">
+                <label for="address">Address line 1</label>
+                <input type="text" class="form-control" id="address" name="address 1" placeholder="district , City , village" required>
+              </div>
+
+              <div class="form-group">
+                <label for="address">Address line 2</label>
+                <input type="text" class="form-control" id="address" name="address 2" placeholder="colony , street , Door No.." required>
+              </div>
+
+
+              <div class="form-group">
+                <h3>The Items You Will Buy:</h3>
+              </div>
+
+              <!-- Display Cart Items in a Textarea -->
+              
+
+              
+              <textarea id="cartItemsTextarea" name="produ_details" rows="10" cols="60" readonly></textarea> <br><br>
+
+              <!-- Checkout Button -->
+              <button onclick="checkout()" type="submit" class="btn btn-primary">Place Order</button>
+
+
+            </form>
+
+
+          </div>
+
+         </div>
       </div>
-  <script src="payment.js"></script>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--div class="container mt-5">
+    < Your checkout page content>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+      < Display Cart Items in a Textarea >
+      <input type="hidden" name="access_key" value="29580fc5-21fb-416e-a17d-1714cf6fdc14">
+
+      <input type="text"  name="Name" placeholder="Enter Your name" required> <br><br>
+      <textarea id="cartItemsTextarea" name="produ_details" rows="10" cols="30" readonly></textarea> <br><br>
+
+      < Checkout Button >
+      <button onclick="checkout()" type="submit">Place Order</button>
+    </form>
+
+  </div-->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Fetch cart data from local storage
+      const cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+
+      // Function to display cart items and total price in the textarea on the checkout page
+      function displayCartInTextarea() {
+        var cartItemsTextarea = document.getElementById("cartItemsTextarea");
+        if (cartItemsTextarea) {
+          // Create a formatted string for each cart item
+          const cartItemsString = cart.map(item => `\n ---> ${item.name} - ₹ ${item.price.toFixed(2)}`).join('\n');
+
+          // Calculate the total price of items
+          const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+
+          // Set the value of the textarea including cart items and total price
+          cartItemsTextarea.value = `${cartItemsString}\n\nTotal Price: ₹ ${totalPrice.toFixed(2)}`;
+        }
+      }
+
+      // Function to handle checkout button click
+      window.checkout = function() {
+        // Redirect to the actual payment page
+        window.location.href = '#payment';
+      }
+
+      // Call the function to display cart items and total price in the textarea on page load
+      displayCartInTextarea();
+    });
+  </script>
 </body>
 </html>
